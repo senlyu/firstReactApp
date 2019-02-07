@@ -6,11 +6,16 @@ import InputBox from "./InputBox";
 import HighLight from "./HighLight";
 
 import "./index.css"
-import { Container, Row, Jumbotron } from 'react-bootstrap';
+import { Container, Jumbotron } from 'react-bootstrap';
 
 
 class App extends React.Component {
+  
 
+  /**
+   * Create the app
+   * @constructor
+   */
   constructor(){
     super();
     this.state = {
@@ -30,10 +35,19 @@ class App extends React.Component {
              {"date": "2014-02", "value": 478}],
       currentIndex: null
     };
+    // if use arrow function for method, no need for these bind
     this.setCurrentIndex = this.setCurrentIndex.bind(this);
     this.addData = this.addData.bind(this);
   }
   
+  /**
+  * Change the value of data
+  * Now we only add value to data
+  * This function is also a hook will be used in components
+  * Also we want our data to be ordered
+  * So here we will sort the data before update in state
+  * @param {value} string - [Year, Month, value]
+  */
   addData(value) {
     const nextDate = `${value[0]}-${value[1]}`;
     const join = this.state.data.concat({"date": nextDate, "value": value[2]});
@@ -42,6 +56,11 @@ class App extends React.Component {
     this.setState({data:join});     
   }
 
+  /**
+  * Control the current selected value
+  * This function use as a hook to get value from components
+  * @param {currentIndex} interger - represent index of the selected bar in the data
+  */
   setCurrentIndex(currentIndex){
     this.setState({
       currentIndex
@@ -50,16 +69,17 @@ class App extends React.Component {
 
 
   render() {
+    // set default values.
     const defaultInput = ['2014', '03', 0];
     const chartWidth = 1000;
     const chartHeight = 500;
 
+    // set all the props for the components
     const inputBoxProps = {
       inputValue : defaultInput,
       updateValue : this.addData,
       data: this.state.data
     }
-
     const chartProps = {
       data : this.state.data,
       widthTotal : chartWidth,
@@ -67,29 +87,27 @@ class App extends React.Component {
       highlightBar : this.setCurrentIndex,
       highlightedBar : this.state.currentIndex
     }
-
     const highLightProps = {
       data: this.state.data,
       currentIndex: this.state.currentIndex
     }
 
     return (
-    
       <Container>
         <Jumbotron className="title-container">
           <h1 className="title">My First React APP</h1>
           <a href="https://github.com/senlyu/firstReactApp">Check the Code Here</a>
         </Jumbotron>
-        <Row>
+        <Container>
           <HighLight {...highLightProps}/>
-        </Row>
-        <Container className="c">         
+        </Container>
+        <Container className="chart">         
           <Chart {...chartProps}/>
         </Container>
         <p className="lead">Also you can add value to the chart.</p>
-        <Row>
+        <Container className="round-c">
           <InputBox {...inputBoxProps}/>
-        </Row>
+        </Container>
       </Container>
     );
   }

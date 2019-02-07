@@ -22,7 +22,7 @@ code {
 	fill: #6c757d;
 }
 
-.c {
+.chart {
   overflow: auto;
 }
 
@@ -40,3 +40,4 @@ code {
 .title {
   padding-left: 20px;
 }
+

@@ -4,7 +4,8 @@ import './HighLight.css';
 
 class HighLight extends React.Component {
 
-
+  /* show the information of the highlight data
+  */
   render() {
     return (
       <Container className="container">

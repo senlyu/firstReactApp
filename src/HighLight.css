@@ -1,9 +1,9 @@
 .container {
 	height: 100%;
+	padding-top:10px;
 }
 
 .inner-container {
-	max-width: 800px;
 	display: flex;
 	justify-content: space-around;
 }
