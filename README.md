@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My first create App
 
-## Available Scripts
+## introduction?
+### A simple project to create d3 bar chart with reactJS
+##### 1.Input date validation
+This app could check whether the input data is already inside the dataset and whether the input value is valid.
+##### 2.Select bar react directly
+This app could highlight the bar your mouse move over
+##### 3.Simple Bootstrap design
+This app use Bootstrap components for easy design
+##### 4.stateless components
+It is a pity, I dont have time to learn redux and try it here. Though, I try to do stateless components in this app. Most of the state saved in root. Only input value is temporary saved in input component. 
 
-In the project directory, you can run:
+## how to use?
+Just like use normal app
 
 ### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## dependencies?
+    bootstrap": "^4.2.1",
+    d3": "^5.8.2",
+    react": "^16.8.1",
+    react-bootstrap": "^1.0.0-beta.5",
+    react-dom": "^16.8.1",
+    react-scripts": "2.1.3"
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Helpful Source
+* add value - https://swizec.com/blog/declarative-d3-charts-react-16-3/swizec/8353
+* svg - https://blog.risingstack.com/d3-js-tutorial-bar-charts-with-javascript/
+* viewbox - https://chartio.com/resources/tutorials/how-to-resize-an-svg-when-the-window-is-resized-in-d3-js/
+* structure - https://medium.com/@caspg/responsive-chart-with-react-and-d3v4-afd717e57583
+* structure(chinese) - https://zhuanlan.zhihu.com/p/21107252
