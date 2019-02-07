@@ -15,7 +15,7 @@ class Bars extends React.Component {
 	            y={this.props.yScale(value)}
 	            width={this.props.xScale.bandwidth()}
 	            height={this.props.height - this.props.yScale(value)}
-	            className={i === this.props.highlightedBar ? "noHighlight" : "Highlight"}
+	            className={i === this.props.highlightedBar ? "Highlight" : "noHighlight"}
 	            onMouseOver={() => this.props.highlightBar(i)}
 	            key={i}
 	          />

@@ -1,5 +1,6 @@
 import React from "react";
-import Dropdown from "react-dropdown"
+import { Col, Button, Form} from 'react-bootstrap';
+import "./InputBox.css";
 
 class InputBox extends React.Component {
 
@@ -34,10 +35,10 @@ class InputBox extends React.Component {
 
       switch(typeInput) {
         case 'y':
-          holder[0] = e.value;
+          holder[0] = e.target.value;
           break;
         case 'm':
-          holder[1] = e.value;
+          holder[1] = e.target.value;
           break;
         case 'v':
           holder[2] = e.target.value;
@@ -46,30 +47,42 @@ class InputBox extends React.Component {
           return;
       }
       this.setState({inputValue: holder});
-
     }
   }
 
   render() {
   	const [inputYear, inputMonth, inputVal] = this.state.inputValue;
-
     const optionsYear = [...Array(16).keys()].map(x=>(x+=2010).toString());;
-    const optionsMonth = [...Array(12).keys()].map(x=>(x+=1).toString());
-    const defaultYear = optionsYear[0];
-    const defaultMonth = optionsMonth[0];
+    const optionsMonth = [...Array(9).keys()].map(x=>`0${(x+=1).toString()}`)
+                        .concat([...Array(3).keys()].map(x=>(x+=10).toString()));
+
     return (
-      <div>
-    		<label>Year:
-    		  <Dropdown options={optionsYear} onChange={this.handle('y')} value={inputYear} placeholder={defaultYear} />
-    		</label>
-    		<label>Month:
-    		  <Dropdown options={optionsMonth} onChange={this.handle('m')} value={inputMonth} placeholder={defaultMonth} />
-    		</label>
-    		<label>Value:
-    		  <input type="text" value={inputVal} onChange={this.handle('v')}/>
-    		</label>
-    		<button onClick={this.handleSubmit}>Click</button>
-      </div>
+      <Form className="form">
+
+            <Form.Group as={Col}>
+              <Form.Label>Year</Form.Label>
+              <Form.Control as="select" value={inputYear} onChange={this.handle('y')}>
+                {optionsYear.map((i)=>(
+                  <option value={i} key={i}>{i}</option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group as={Col}>
+              <Form.Label>Month</Form.Label>
+              <Form.Control as="select" value={inputMonth} onChange={this.handle('m')}>
+                {optionsMonth.map((i)=>(
+                  <option value={i} key={i}>{i}</option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group as={Col}>
+              <Form.Label>Value</Form.Label>
+              <Form.Control type="text" value={inputVal} onChange={this.handle('v')} />
+            </Form.Group>
+            <Button className="button" variant="primary" type="button" onClick={this.handleSubmit}>
+              Submit
+            </Button>
+      </Form>
 	  )
   }
 }

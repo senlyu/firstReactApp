@@ -49,15 +49,13 @@ class Chart extends React.Component {
       yScale: yScale
     }
 
-
-
     return (
-      <svg width="100%" height={`${this.props.heightTotal}`}>
-
-        <Axis {...xProps}/>
-        <Axis {...yProps}/>
-        <Bars {...barProps}/>
-
+      <svg width={this.props.widthTotal} height={`${this.props.heightTotal}`} viewBox="0 0 1000 500">
+        <g>
+          <Axis {...xProps}/>
+          <Axis {...yProps}/>
+          <Bars {...barProps}/>
+        </g>
       </svg>
     );
   }

@@ -15,13 +15,28 @@ code {
 }
 
 .Highlight {
-	fill: red;
+	fill: #007bff;
 }
 
 .noHighlight {
-	fill: green;
+	fill: #6c757d;
 }
 
-.test {
-	margin-left:50px;
+.c {
+  overflow: auto;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.lead {
+  text-align: center;
+  margin: 50px;
+}
+
+.title {
+  padding-left: 20px;
 }

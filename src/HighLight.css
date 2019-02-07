@@ -1,0 +1,29 @@
+.container {
+	height: 100%;
+}
+
+.inner-container {
+	max-width: 800px;
+	display: flex;
+	justify-content: space-around;
+}
+
+p {
+	text-align: center;
+}
+
+.card {
+	width: 300px;
+	margin: 40px;
+}
+
+.card-title {
+	color: #395AAE;
+	text-align: center;
+}
+
+.card-subtitle {
+	color: #8299B8;
+	margin: 10px 0 0 0;
+	text-align: center;
+}

@@ -6,7 +6,7 @@ import InputBox from "./InputBox";
 import HighLight from "./HighLight";
 
 import "./index.css"
-
+import { Container, Row, Jumbotron } from 'react-bootstrap';
 
 
 class App extends React.Component {
@@ -50,10 +50,8 @@ class App extends React.Component {
 
 
   render() {
-
     const defaultInput = ['2014', '03', 0];
-
-    const chartWidth = 500;
+    const chartWidth = 1000;
     const chartHeight = 500;
 
     const inputBoxProps = {
@@ -77,12 +75,22 @@ class App extends React.Component {
 
     return (
     
-      <div className={"test"}>
-        <h1>Title</h1>
-        <InputBox {...inputBoxProps}/>
-        <Chart {...chartProps}/>
-        <HighLight {...highLightProps}/>
-      </div>
+      <Container>
+        <Jumbotron className="title-container">
+          <h1 className="title">My First React APP</h1>
+          <a href="https://github.com/senlyu/firstReactApp">Check the Code Here</a>
+        </Jumbotron>
+        <Row>
+          <HighLight {...highLightProps}/>
+        </Row>
+        <Container className="c">         
+          <Chart {...chartProps}/>
+        </Container>
+        <p className="lead">Also you can add value to the chart.</p>
+        <Row>
+          <InputBox {...inputBoxProps}/>
+        </Row>
+      </Container>
     );
   }
 }

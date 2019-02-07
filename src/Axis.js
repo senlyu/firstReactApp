@@ -22,7 +22,6 @@ class Axis extends React.Component {
     d3.select(this.axisElement).call(axiss)
   }
 
-
   render() {
     return (
       <g
