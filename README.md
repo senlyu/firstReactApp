@@ -1,4 +1,4 @@
-# My first create App
+# My first react App
 
 ## introduction?
 ### A simple project to create d3 bar chart with reactJS
